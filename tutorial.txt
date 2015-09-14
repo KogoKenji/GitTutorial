@@ -1,0 +1,23 @@
+git init // はじめ
+
+echo "つくってみた" >> file.txt // txt生成
+
+git add file.txt
+または
+git add . [カレントディレクトリ内すべて add]
+git commit -m "コミットメッセージ" // -m でコミットメッセージつけるよのサイン
+git push origin master // -u origin masterで次からのプッシュをすべてmasterに投げられるけどブランチ切ってる時なんかは気をつける
+
+git checkout -b branch1 // -bで新ブランチ作成＆ブランチをmaster からbranch1へ移行
+
+間違えてbranch1でするはずの操作をmasterでやったとき
+[master]  git stash
+からの
+[branch1] git stash pop
+でbranch1 で移行可能
+
+git reset --hard [commit id]でその時点のブランチ状態に戻すことが出来る.
+
+Webでマージするときはプルリクエスト→マージ
+
+ローカル上では git push origin branch1 で出来る
